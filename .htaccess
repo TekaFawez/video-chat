@@ -1,0 +1,16 @@
+RewriteEngine On  #create condetion to modify URL  
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([a-zA-Z0-9]+)/?$ connect.php?username=$1 
+#^([a-zA-Z0-9]+) this will save in $1
+
+# RewriteEngine On: This enables the URL rewriting engine.
+
+# RewriteCond %{REQUEST_FILENAME} !-f: This checks if the requested file does not exist.
+
+# RewriteCond %{REQUEST_FILENAME} !-d: This checks if the requested directory does not exist.
+
+# RewriteRule ^([a-zA-Z0-9]+)/?$ connect.php?username=$1: This is the main rewrite rule.
+#  It matches URLs that consist of one or more alphanumeric characters and optionally end with a forward slash.
+#   It rewrites the URL to connect.php and passes the matched string as the username parameter.
